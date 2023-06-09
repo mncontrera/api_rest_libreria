@@ -1,11 +1,11 @@
 const { DataTypes, Model } = require('sequelize');
 const { dbInstance } = require('../db/sequelize-config')
 
-class User extends Model {
+class Library extends Model {
 
 }
 
-User.init({
+Library.init({
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -15,23 +15,22 @@ User.init({
         type: DataTypes.STRING,
         allowNull: false
     },
-    lastName: {
+    location: {
         type: DataTypes.STRING
     },
-    email: {
+    phone: {
         type: DataTypes.STRING
     },
-    password: {
-        type: DataTypes.STRING,
-        allowNull: false
+    eliminated: {
+        type: DataTypes.INTEGER
     }
 }, {
     sequelize: dbInstance,
-    modelName: 'User',
+    modelName: 'Library',
     createdAt: false,
     updatedAt: false
 })
 
 //User.sync();
 
-module.exports = { User }
+module.exports = { Library }

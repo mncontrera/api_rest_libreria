@@ -1,5 +1,6 @@
 const express = require('express')
 const userRoutes = require('./src/routes/user-routes')
+const libraryRoutes = require('./src/routes/library-routes')
 const { errorHandlerMiddleware } = require('./src/middlewares/error-handlers')
 const { initializeAuthentication } = require('./src/auth/auth')
 
@@ -10,6 +11,7 @@ initializeAuthentication()
 
 app.use(express.json())
 app.use('/users', userRoutes)
+app.use('/library', libraryRoutes)
 app.use(errorHandlerMiddleware)
 
 app.listen(port, () => {
