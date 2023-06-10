@@ -31,6 +31,4 @@ Library.init({
     updatedAt: false
 })
 
-//User.sync();
-
 module.exports = { Library }

@@ -26,6 +26,9 @@ Book.init({
     },
     library: {
         type: DataTypes.INTEGER
+    },
+    eliminated: {
+        type: DataTypes.INTEGER
     }
 }, {
     sequelize: dbInstance,
@@ -33,7 +36,5 @@ Book.init({
     createdAt: false,
     updatedAt: false
 })
-
-//User.sync();
 
 module.exports = { Book }
